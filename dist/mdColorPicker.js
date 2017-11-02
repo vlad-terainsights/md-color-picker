@@ -533,7 +533,7 @@ angular.module('mdColorPicker', [])
 				// The only other ngModel changes
 
 				$scope.clearValue = function clearValue() {
-					$scope.value = '';
+					ngModel.$setViewValue('');
 				};
 				$scope.showColorPicker = function showColorPicker($event) {
 					if ( didJustClose ) {
@@ -894,6 +894,7 @@ angular.module('mdColorPicker', [])
 					templateUrl: 'mdColorPickerDialog.tpl.html',
 					hasBackdrop: options.hasBackdrop,
 					clickOutsideToClose: options.clickOutsideToClose,
+					multiple: true,
 
 					controller: ['$scope', 'options', function( $scope, options ) {
 							//console.log( "DIALOG CONTROLLER OPEN", Date.now() - dateClick );
